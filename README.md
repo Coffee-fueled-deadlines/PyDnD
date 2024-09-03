@@ -81,11 +81,11 @@ if __name__ == '__main__':
 	print( "LEVEL DOWN")
 
 	print("\n\n")
-	# Lets see what Thor looks like as a level 2
+	# Lets take away some of Thor's Experience
 	newPlayer.removeExp(500)
-	print( "\tNew Level: " + str( newPlayer.level ) ) # newPlayer.level is automatically increased when XP threshold increases
-	print( "\tCurrent Experience: " + str( newPlayer.experience ) ) # Current, experience after leveling up
-	print( "\tEXP to next Level: " + str( newPlayer.nextLvlExperience ) ) # 3000 Experience total is required to get to level 3
+	print( "\tNew Level: " + str( newPlayer.level ) ) # newPlayer.level is automatically decreased when XP threshold decreases
+	print( "\tCurrent Experience: " + str( newPlayer.experience ) ) # Current, experience after leveling down
+	print( "\tEXP to next Level: " + str( newPlayer.nextLvlExperience ) ) # 500 Experience total is required to get to level 2
 	print( "\n\t--Stats--\n")
 	print( "\t\tStrength is: " + str( newPlayer.strength ))
 	print( "\t\tDexterity is: " + str( newPlayer.dexterity ))
