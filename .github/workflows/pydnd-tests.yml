@@ -13,11 +13,11 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-20.04  # Using an older Ubuntu version for Python 3.6 support
+    runs-on: ubuntu-18.04  # Using an older Ubuntu version for Python 3.6 support
 
     strategy:
       matrix:
-        python-version: [3.6, 3.8, 3.9, 3.10, 3.11]
+        python-version: [3.6.15, 3.8, 3.9, 3.11]
 
     steps:
     - uses: actions/checkout@v3
