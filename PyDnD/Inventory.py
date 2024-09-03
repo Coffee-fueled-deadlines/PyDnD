@@ -43,6 +43,9 @@ class Inventory(object):
         self.items = []
         self.max_size = max_size
 
+    def test_method(self):
+        print("This method exists to test github actions")
+
     def add_item(self, item, quantity=1):
         """
         Adds a specified quantity of an item to the inventory if there is space.
