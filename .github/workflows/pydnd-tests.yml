@@ -1,4 +1,4 @@
-name: Python package
+name: PyDnD Tests
 
 on:
   push:
@@ -13,11 +13,11 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-20.04  # Using an older Ubuntu version for Python 3.6 support
 
     strategy:
       matrix:
-        python-version: ["3.6.15","3.7","3.8", "3.9", "3.10"]
+        python-version: [3.6, 3.8, 3.9, 3.10, 3.11]
 
     steps:
     - uses: actions/checkout@v3
@@ -29,4 +29,4 @@ jobs:
 
     - name: Run tests
       run: |
-        python -m unittest discover tests
+        python -m unittest discover -s tests
