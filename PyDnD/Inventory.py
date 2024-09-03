@@ -4,7 +4,7 @@ applications.
 
 {License_info}
 
-Inventory Module is creating and managing player inventories 
+Inventory Module is creating and managing player inventories
 """
 
 # META Data
@@ -42,9 +42,6 @@ class Inventory(object):
         """
         self.items = []
         self.max_size = max_size
-
-    def test_method(self):
-        print("This method exists to test github actions")
 
     def add_item(self, item, quantity=1):
         """
