@@ -4,7 +4,7 @@ applications.
 
 {License_info}
 
-Inventory Module is creating and managing player inventories
+Inventory Module is creating and managing player inventories 
 """
 
 # META Data
