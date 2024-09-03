@@ -88,6 +88,15 @@ class Inventory(object):
         for _ in range(quantity):
             self.items.remove(item)
 
+    def get_inventory_max_size(self):
+        """
+        Returns the maximum size of the inventory
+
+        Returns:
+            int: The maximum size of the inventory
+        """
+        return self.max_size
+
     def get_inventory_size(self):
         """
         Returns the number of items in the inventory.

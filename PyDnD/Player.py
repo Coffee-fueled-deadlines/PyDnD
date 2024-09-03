@@ -444,57 +444,30 @@ class Player(object):
     def get_inventory(self):
         return self.inventory.items
 
+    def get_inventory_max_size(self):
+        return self.inventory.get_inventory_max_size()
 
-    # Deprecated methods with warnings
     def giveExp(self, xp):
-        warnings.warn(
-            "Player.giveExp() is deprecated. Use LevelingSystem.giveExp() instead.",
-            DeprecationWarning,
-            stacklevel=2
-        )
         self.leveling_system.giveExp(xp)
 
     def removeExp(self, xp):
-        warnings.warn(
-            "Player.removeExp() is deprecated. Use LevelingSystem.removeExp() instead.",
-            DeprecationWarning,
-            stacklevel=2
-        )
         self.leveling_system.removeExp(xp)
 
     def LeveledUp(self):
-        warnings.warn(
-            "Player.LeveledUp() is deprecated. Use LevelingSystem.LeveledUp() instead.",
-            DeprecationWarning,
-            stacklevel=2
-        )
+        """This will be removed in version 1.1.0"""
         return self.leveling_system.LeveledUp()
 
     def LeveledDown(self):
-        warnings.warn(
-            "Player.LeveledDown() is deprecated. Use LevelingSystem.LeveledDown() instead.",
-            DeprecationWarning,
-            stacklevel=2
-        )
+        """This will be removed in version 1.1.0"""
         return self.leveling_system.LeveledDown()
 
     def levelUp(self):
-        warnings.warn(
-            "Player.levelUp() is deprecated. Use LevelingSystem.levelUp() instead.",
-            DeprecationWarning,
-            stacklevel=2
-        )
+        """This will be removed in version 1.1.0"""
         self.leveling_system.levelUp()
 
     def levelDown(self):
-        warnings.warn(
-            "Player.levelDown() is deprecated. Use LevelingSystem.levelDown() instead.",
-            DeprecationWarning,
-            stacklevel=2
-        )
+        """This will be removed in version 1.1.0"""
         self.leveling_system.levelDown()
-
-
 
     # Static Helper Methods
     @staticmethod
