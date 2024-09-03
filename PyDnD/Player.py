@@ -436,16 +436,10 @@ class Player(object):
 
     # Inventory Methods
     def add_item_to_inventory(self, item, quantity=1):
-        try:
-            self.inventory.add_item(item, quantity)
-        except InventoryIsFull as e:
-            print(e)
+        self.inventory.add_item(item, quantity)
 
     def remove_item_from_inventory(self, item, quantity=1):
-        try:
-            self.inventory.remove_item(item, quantity)
-        except ItemNotInInventory as e:
-            print(e)
+        self.inventory.remove_item(item, quantity)
 
     def get_inventory(self):
         return self.inventory.items

@@ -93,8 +93,6 @@ class LevelingSystem(object):
             if self.player.level == 1:
                 if xp > self.player._experience:
                     self.player._experience = 0
-                else:
-                    self.player._experience -= xp
                 break
             else:
                 self.levelDown()
