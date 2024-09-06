@@ -9,6 +9,7 @@ that pertains strictly to the Player Character.
 """
 
 # Built-in/Generic Imports
+import json
 from uuid import uuid4
 import warnings
 
@@ -468,6 +469,92 @@ class Player(object):
     def levelDown(self):
         """This will be removed in version 1.1.0"""
         self.leveling_system.levelDown()
+
+    # Serialization/Deserialization
+    # Json
+    def serialize_to_json(self, filepath):
+        """
+        Serializes the Player object, including the inventory, into a JSON file.
+
+        Args:
+            filepath (str): The file path where the JSON will be saved.
+        """
+        player_data = {
+            'uid': str(self.uid),
+            'name': self.name,
+            'age': self.age,
+            'gender': self.gender,
+            'description': self.description,
+            'biography': self.biography,
+            'alignment': self.alignment,
+            'level': self.level,
+            'experience': self.experience,
+            'nextLvlExperience': self.nextLvlExperience,
+            'wealth': self.wealth,
+            'strength': self.strength,
+            'dexterity': self.dexterity,
+            'constitution': self.constitution,
+            'wisdom': self.wisdom,
+            'intelligence': self.intelligence,
+            'charisma': self.charisma,
+            'hp': self.hp,
+            'mp': self.mp,
+            'skillpoints': self.skillpoints,
+            'featpoints': self.featpoints,
+            'inventory': self.inventory.items,  # Assuming inventory is a list of items
+        }
+
+        with open(filepath, 'w') as json_file:
+            json.dump(player_data, json_file, indent=4)
+
+        print(f"Player data serialized to {filepath}")
+
+    @staticmethod
+    def deserialize_from_json(filepath):
+        """
+        Deserializes the Player object from a JSON file.
+
+        Args:
+            filepath (str): The file path where the JSON is stored.
+
+        Returns:
+            Player: The reconstructed Player object.
+        """
+        with open(filepath, 'r') as json_file:
+            player_data = json.load(json_file)
+
+        # Create a new Player object and populate its fields
+        player = Player(
+            name=player_data.get('name'),
+            age=player_data.get('age'),
+            gender=player_data.get('gender'),
+            alignment=player_data.get('alignment'),
+            description=player_data.get('description'),
+            biography=player_data.get('biography'),
+            level=player_data.get('level'),
+            wealth=player_data.get('wealth'),
+            strength=player_data.get('strength'),
+            dexterity=player_data.get('dexterity'),
+            constitution=player_data.get('constitution'),
+            wisdom=player_data.get('wisdom'),
+            intelligence=player_data.get('intelligence'),
+            charisma=player_data.get('charisma'),
+            hp=player_data.get('hp'),
+            mp=player_data.get('mp'),
+            inventory_size=10  # Set a default or modify based on the data if needed
+        )
+
+        # Set experience and skill/feat points
+        player._experience = player_data.get('experience')
+        player.skillpoints = player_data.get('skillpoints')
+        player.featpoints = player_data.get('featpoints')
+
+        # Reconstruct the inventory
+        for item in player_data.get('inventory', []):
+            player.add_item_to_inventory(item)
+
+        print(f"Player data deserialized from {filepath}")
+        return player        
 
     # Static Helper Methods
     @staticmethod
