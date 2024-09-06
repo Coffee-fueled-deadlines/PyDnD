@@ -214,7 +214,7 @@ print(f"Items in inventory: {theBagMan.get_inventory()}") # Bye bye
 
   `Roll` and `Dice` are two new Modules in the PyDnD package.  The `Roll` module makes use of the `Dice` module, meaning that generally you won't or shouldn't interact directly with the `Dice` module itself.  Below are some examples of how to roll different types of dice.
 
-Examples
+### Examples
 ```python
 from PyDnD import Roll
 
@@ -235,4 +235,43 @@ print( f"Strength Stat is: {strength_stat}" )
 # Lets tell the roller
 strength_stat = Roll.roll(num_dice=4, sides=6, drop_lowest=1, return_rolls=True)
 print( f"Strength Stat is: {strength_stat[0]} and the rolls where: {strength_stat[1]}" )
+```
+***
+
+## Serialization/Deserialization (JSON)
+
+  PyDnD now supports JSON Serialization and Deserialization (This means that you can easily export your character to and from a .json file).  Below are some examples of how to do Serialize a character:
+
+### Examples
+```python
+# Example of JSON Serialization
+
+from PyDnD import Player
+
+# Lets make a new Character
+newPlayer = Player(name='Thor Odinson', age='34', gender='Male', description='Looks like a pirate angel', biography='Born on Asgard, God of Thunder')
+
+# Lets display some info
+print( "Name:" + newPlayer.name )
+print( "Age: " +newPlayer.age)
+print( "Gender:" + newPlayer.gender )
+print( "Description: " + newPlayer.description )
+print( "Biography: " + newPlayer.biography )
+
+# Lets save this character to a .json file
+newPlayer.serialize_to_json("./path/to/newPlayer.json")
+```
+
+  Below is an example of deserialization from that same file:
+
+```python
+# Lets load our player from json
+newPlayer = Player().deserialize_from_json("./path/to/newPlayer.json")
+
+# Lets display some info
+print( "Name:" + newPlayer.name )
+print( "Age: " +newPlayer.age)
+print( "Gender:" + newPlayer.gender )
+print( "Description: " + newPlayer.description )
+print( "Biography: " + newPlayer.biography )
 ```
