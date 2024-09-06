@@ -37,7 +37,7 @@ if __name__ == '__main__':
 	print( "\n\t--Stats--\n")
 	print( "\t\tStrength is: " + str( newPlayer.strength ))
 	print( "\t\tDexterity is: " + str( newPlayer.dexterity ))
-	print( "\t\tConsitution is: " + str( newPlayer.constitution ))
+	print( "\t\tConstitution is: " + str( newPlayer.constitution ))
 	print( "\t\tWisdom is: " + str( newPlayer.wisdom ))
 	print( "\t\tIntelligence is: " + str( newPlayer.intelligence ))
 	print( "\t\tCharisma is: " + str( newPlayer.charisma ))
@@ -63,7 +63,7 @@ if __name__ == '__main__':
 	print( "\n\t--Stats--\n")
 	print( "\t\tStrength is: " + str( newPlayer.strength ))
 	print( "\t\tDexterity is: " + str( newPlayer.dexterity ))
-	print( "\t\tConsitution is: " + str( newPlayer.constitution ))
+	print( "\t\tConstitution is: " + str( newPlayer.constitution ))
 	print( "\t\tWisdom is: " + str( newPlayer.wisdom ))
 	print( "\t\tIntelligence is: " + str( newPlayer.intelligence ))
 	print( "\t\tCharisma is: " + str( newPlayer.charisma ))
@@ -89,7 +89,7 @@ if __name__ == '__main__':
 	print( "\n\t--Stats--\n")
 	print( "\t\tStrength is: " + str( newPlayer.strength ))
 	print( "\t\tDexterity is: " + str( newPlayer.dexterity ))
-	print( "\t\tConsitution is: " + str( newPlayer.constitution ))
+	print( "\t\tConstitution is: " + str( newPlayer.constitution ))
 	print( "\t\tWisdom is: " + str( newPlayer.wisdom ))
 	print( "\t\tIntelligence is: " + str( newPlayer.intelligence ))
 	print( "\t\tCharisma is: " + str( newPlayer.charisma ))
@@ -240,7 +240,7 @@ print( f"Strength Stat is: {strength_stat[0]} and the rolls where: {strength_sta
 
 ## Serialization/Deserialization (JSON)
 
-  PyDnD now supports JSON Serialization and Deserialization (This means that you can easily export your character to and from a .json file).  Below are some examples of how to do Serialize a character:
+  PyDnD now supports JSON Serialization and Deserialization (This means that you can easily export your character to and from a .json file).  Below are some examples of how to Serialize a character:
 
 ### Examples
 ```python
