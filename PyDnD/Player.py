@@ -11,6 +11,7 @@ that pertains strictly to the Player Character.
 # Built-in/Generic Imports
 import json
 from uuid import uuid4
+import math
 import warnings
 
 # Import LevelingSystem
@@ -508,6 +509,18 @@ class Player(object):
             json.dump(player_data, json_file, indent=4)
 
         print(f"Player data serialized to {filepath}")
+
+    # Get Modifier for Stat
+    def get_modifier(self, stat):
+        """Returns modifier for given stat
+
+        Args:
+            stat (int): The player ability score to calculate the modifier for
+
+        Returns:
+            modifier(int): The modifier for the given stat
+        """
+        return math.floor(stat/2)-5
 
     @staticmethod
     def deserialize_from_json(filepath):
