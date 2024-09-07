@@ -129,6 +129,11 @@ class Player(object):
         self._experience = 0
         self.leveling_system = LevelingSystem(self)
         self.leveling_system.getCurrentExperience()
+
+        # Handles setting experience for non-level 1 characters
+        if level != 1:
+            self._experience = self.leveling_system.getThresholdForCurrentLevel()        
+            
         self.wealth = wealth
         self.strength = strength
         self.dexterity = dexterity
